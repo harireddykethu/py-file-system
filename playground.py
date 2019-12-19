@@ -1,20 +1,17 @@
-# Basics:
-# File I/O is achieved by using the built-in open() function
-# Reference: https://docs.python.org/3/library/functions.html#open
+# Any I/O operation is exception prone
+# therefore, we ought to handle the errors and take
+# necessary corrective measures
 
-# Task 1: Read a file
+# we emulate an erroneous situation by misspelt file name
 
-# Steps:
-# a. open with r for reading and t for text
-# b. get the file object
-# c. read the content to a string variable
-# d. close when done
+try:
+    file_object = open('po23em.txt', 'rt', encoding='utf-8')
+    contents = file_object.read()
+    print(contents)
+    file_object.close()
 
-file_object = open('poem.txt', 'rt', encoding='utf-8')
+except FileNotFoundError as e:
+    print('Oops, we could not find the file')
+
 
 # read all content
-contents = file_object.read()
-
-print(contents)
-
-file_object.close()
