@@ -6,12 +6,9 @@
 
 try:
     file_object = open('po23em.txt', 'rt', encoding='utf-8')
-    contents = file_object.read()
-    print(contents)
+    for line in file_object:
+        print(f'Reading: {line}')
     file_object.close()
 
 except FileNotFoundError as e:
     print('Oops, we could not find the file')
-
-
-# read all content
