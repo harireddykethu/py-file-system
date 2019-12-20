@@ -5,7 +5,7 @@
 # we emulate an erroneous situation by misspelt file name
 
 try:
-    file_object = open('po23em.txt', 'rt', encoding='utf-8')
+    file_object = open('poem.txt', 'rt', encoding='utf-8')
     for line in file_object:
         print(f'Reading: {line}')
     file_object.close()
